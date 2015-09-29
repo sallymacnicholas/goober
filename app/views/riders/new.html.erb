@@ -1,0 +1,19 @@
+<h2 class="center pink-text text-accent-1">Hey there! Fill out this form to become a new Rider</h2>
+<div class="row">
+  <div class="col s8 offset-s2">
+    <%= form_for @rider, url: {controller: "riders", action: "create"} do |f| %>
+      <%= f.label :name, "Name" %>
+      <%= f.text_field :name %>
+      <%= f.label :email, "Email Address" %>
+      <%= f.text_field :email %>
+      <%= f.label :phone_number, "Phone Number" %>
+      <%= f.text_field :phone_number %>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+      <%= f.label :password_confirmation, "Password Confirmation" %>
+      <%= f.password_field :password_confirmation %>
+    <%= f.submit 'Create Account'%>
+    <% end %>
+  </div>
+</div>
+

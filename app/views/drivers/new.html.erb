@@ -1,0 +1,26 @@
+<h2 class="center pink-text text-accent-1">So you wanna drive around a bunch of
+goobers? Fill out this form!</h2>
+<div class="row">
+  <div class="col s8 offset-s2">
+    <%= form_for @driver, url: {controller: "drivers", action: "create"} do |f| %>
+      <%= f.label :name, "Name" %>
+      <%= f.text_field :name %>
+      <%= f.label :email, "Email Address" %>
+      <%= f.text_field :email %>
+      <%= f.label :phone_number, "Phone Number" %>
+      <%= f.text_field :phone_number %>
+      <%= f.label :car_make, "Car Make" %>
+      <%= f.text_field :car_make %>
+      <%= f.label :car_model, "Car Model" %>
+      <%= f.text_field :car_model %>
+      <%= f.label :car_capacity, "How many goobers can you fit in your car?" %>
+      <%= f.text_field :car_capacity %>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+      <%= f.label :password, "Password Confirmation" %>
+      <%= f.password_field :password_confirmation %>
+    <%= f.submit 'Create Account'%>
+    <% end %>
+  </div>
+</div>
+
