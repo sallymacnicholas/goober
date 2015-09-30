@@ -9,6 +9,8 @@ class RidesController < ApplicationController
       @ride.eta = RideDetails.new(@ride).eta
       @ride.distance = RideDetails.new(@ride).distance
     if @ride.save
+      redirect_to rider_path(current_user)
+    else
       flash.notice = @ride.errors.full_messages.join(", ")
       render :new
     end
