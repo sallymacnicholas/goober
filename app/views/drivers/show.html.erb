@@ -6,20 +6,20 @@
     <% if @driver_ride %>
        <%= render "current_ride", locals: {driver_ride: @driver_ride} %>
     <% else %>
-     <% if active_rides.count != 0 %>
-       <%= render "available_rides", locals: {active_rides: active_rides} %>
-     <% else %>
-       <h2>Sorry, there are currently no rides available</h2>
-     <% end %>
-     <% end %>
+    <% if active_rides.count != 0 %>
+      <%= render "available_rides", locals: {active_rides: active_rides} %>
+    <% else %>
+      <h2>Sorry, there are currently no rides available</h2>
+    <% end %>
+    <% end %>
     </ul>
   </div>
 </div>
 <div class="row">
   <div class="col s10 offset-s1">
-      <% if @completed.count != 0 %>
-        <%= render "shared/completed", locals: { completed: @completed } %>
-     <% end %>
+    <% if @completed.count != 0 %>
+      <%= render "shared/completed", locals: { completed: @completed } %>
+    <% end %>
   </div>
 </div>
 

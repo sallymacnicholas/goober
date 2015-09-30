@@ -27,8 +27,11 @@ class RidersController < ApplicationController
   private
 
   def rider_params
-    params.require(:user).permit(:name, :email, :password, :phone_number,
-      :password_confirmation)
+    params.require(:user).permit(:name,
+                                 :email,
+                                 :password,
+                                 :phone_number,
+                                 :password_confirmation)
   end
 
   def current_user?
