@@ -24,9 +24,9 @@ class User < ActiveRecord::Base
 
   def completed_rides
     if role == "rider"
-      Ride.where(status: "completed")
+      Ride.where(status: "completed", rider_id: id)
     else
-      Ride.where(status: "completed")
+      Ride.where(status: "completed", driver_id: id)
     end
   end
 end
