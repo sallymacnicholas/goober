@@ -5,6 +5,10 @@ class DriversController < ApplicationController
     @driver = User.new
   end
 
+  def show
+    @driver_ride = current_user.driver_rides
+  end
+
   def create
     @driver = User.new(driver_params)
     @driver.role = "driver"

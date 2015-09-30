@@ -3,7 +3,9 @@
 <h2>Available Rides</h2>
 <div class="row">
   <div class="col s8 offset-s2">
-    <ul class="collection with-header"> 
+    <ul class="collection with-header">
+      <li class="collection-header center"><h4>Current Ride</h4></li>
+        <li class=collection-item>Pickup: <%= @driver_ride.pickup %> | Dropoff: <%= @driver_ride.dropoff %> | Passengers: <%= @driver_ride.passengers %><span><i class="secondary-content">Status: <%= @driver_ride.status %></i></span></li>
       <li class="collection-header center"><h4>Available Rides</h4></li>
       <% active_rides.each do |ride| %>
         <li class=collection-item><%= ride.pickup %> | <%= ride.dropoff %> | <%= ride.passengers %><span><i class="secondary-content"><%= link_to 'Accept Ride', ride_path(ride), method: :put %></i></span></li>

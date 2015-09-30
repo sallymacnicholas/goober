@@ -8,6 +8,7 @@ class RidersController < ApplicationController
    
   def show
     @active_ride = current_user.active_ride
+    @driver = current_user.driver
   end
   def create
     @rider = User.new(rider_params)
@@ -35,7 +36,7 @@ class RidersController < ApplicationController
   end
 
   def authorize_rider
-    unless current_user.id == params[:id]
+    unless current_user.id == params[:id].to_i
       redirect_to root_path
     end
   end

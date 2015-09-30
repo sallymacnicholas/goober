@@ -19,4 +19,12 @@ class User < ActiveRecord::Base
   def active_ride
     Ride.where.not(status: "completed").first
   end
+
+  def driver
+    User.where(id: active_ride.driver_id).first
+  end
+
+  def driver_rides
+    Ride.where.not(status: "completed").where(driver_id: id).where.not(status: "completed").first
+  end
 end
