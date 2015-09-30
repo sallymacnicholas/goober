@@ -1,5 +1,5 @@
 class RidersController < ApplicationController
-  before_action :current_user?
+  before_action :current_user?, only: [:show]
   before_action :authorize_rider, only: [:show]
 
   def new
