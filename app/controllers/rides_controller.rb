@@ -14,6 +14,12 @@ class RidesController < ApplicationController
     end
   end
 
+  def update
+    @ride = Ride.find(params[:id])
+    @ride.update(driver_id: current_user.id, accepted_time: Time.now, status: "accepted")
+    redirect_to driver_path(current_user)
+  end
+
   def set_ride_ids
       #session[:user_id] = @rider.id
     if current_user.role == "rider"

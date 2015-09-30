@@ -1,4 +1,7 @@
 class RidersController < ApplicationController
+  before_action :current_user?
+  before_action :authorize_rider, only: [:show]
+
   def new
     @rider = User.new
   end
@@ -23,6 +26,18 @@ class RidersController < ApplicationController
   def rider_params
     params.require(:user).permit(:name, :email, :password, :phone_number,
       :password_confirmation)
+  end
+
+  def current_user?
+    if current_user == nil
+      redirect_to root_path
+    end
+  end
+
+  def authorize_rider
+    unless current_user.id == params[:id]
+      redirect_to root_path
+    end
   end
 end
 

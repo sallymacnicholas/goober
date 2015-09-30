@@ -6,5 +6,7 @@ Rails.application.routes.draw do
 
   resources :riders
   resources :drivers
-  resources :rides, only: [:new, :create]
+  resources :rides, only: [:new, :create, :update, :show]
+
+  get "*rest" => "home#not_found"
 end
