@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   validates :car_capacity, numericality: true, presence: true, unless: ->(user){user.role == "rider"}
 
   def active_ride
-    Ride.where.not(status: "completed").first
+    Ride.where.not(status: "completed").where(rider_id: id).first
   end
 
   def driver
