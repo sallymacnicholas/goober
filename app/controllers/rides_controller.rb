@@ -20,6 +20,8 @@ class RidesController < ApplicationController
       @ride.update(driver_id: current_user.id, accepted_time: Time.now, status: "accepted")
     elsif @ride.status == "accepted"
       @ride.update(pickup_time: Time.now, status: "picked up")
+    else
+      @ride.update(dropoff_time: Time.now, status: "completed")
     end
     redirect_to driver_path(current_user)
   end

@@ -21,10 +21,20 @@ class User < ActiveRecord::Base
   end
 
   def driver
-    User.where(id: active_ride.driver_id).first
+    if active_ride
+      User.where(id: active_ride.driver_id).first
+    end
   end
 
   def driver_rides
     Ride.where.not(status: "completed").where(driver_id: id).where.not(status: "completed").first
+  end
+
+  def completed_rides
+    if role == "rider"
+      Ride.where(status: "completed")
+    else
+      Ride.where(status: "completed")
+    end
   end
 end

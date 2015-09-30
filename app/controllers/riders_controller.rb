@@ -9,6 +9,7 @@ class RidersController < ApplicationController
   def show
     @active_ride = current_user.active_ride
     @driver = current_user.driver
+    @completed = current_user.completed_rides
   end
 
   def create
