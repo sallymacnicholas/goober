@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
         redirect_to driver_path(user)
       end
     else
-      flash.notice = "Invalid Login"
+      flash.now[:errors] = "Invalid Login"
       render :new
     end
   end

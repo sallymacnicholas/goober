@@ -17,7 +17,7 @@ class DriversController < ApplicationController
       session[:user_id] = @driver.id
       redirect_to driver_path(@driver)
     else
-      flash.notice = @driver.errors.full_messages.join(", ")
+      flash.now[:errors] = @driver.errors.full_messages.join(", ")
       render :new
     end
   end
