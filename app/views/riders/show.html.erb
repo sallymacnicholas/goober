@@ -1,1 +1,10 @@
 <h1>Rider Dashboard</h1>
+<% if @active_ride == nil %>
+  <%= link_to 'Request a Ride', new_ride_path %>
+<% else %>
+<h3 class="center">You have an active ride request!!</h3>
+<li class="center">Pickup: <%= @active_ride.pickup %></li>
+<li class="center">Dropoff: <%= @active_ride.dropoff %></li>
+<li class="center">Passengers: <%= @active_ride.passengers %></li>
+<% end %>
+

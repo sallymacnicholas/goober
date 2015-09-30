@@ -1,0 +1,16 @@
+<h2 class="center pink-text text-accent-1">Hey there rider. Fill this out to get
+picked up</h2>
+<div class="row">
+  <div class="col s8 offset-s2">
+    <%= form_for @ride do |f| %>
+      <%= f.label :pickup, "Pickup Location" %>
+      <%= f.text_field :pickup %>
+      <%= f.label :dropoff, "Dropoff Location" %>
+      <%= f.text_field :dropoff %>
+      <%= f.label :passengers, "Number of Passengers" %>
+      <%= f.text_field :passengers %>
+    <%= f.submit 'Submit Ride Request'%>
+    <% end %>
+  </div>
+</div>
+

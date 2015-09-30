@@ -6,4 +6,5 @@ Rails.application.routes.draw do
 
   resources :riders
   resources :drivers
+  resources :rides, only: [:new, :create]
 end

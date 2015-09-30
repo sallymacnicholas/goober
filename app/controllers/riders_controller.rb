@@ -2,7 +2,10 @@ class RidersController < ApplicationController
   def new
     @rider = User.new
   end
-
+   
+  def show
+    @active_ride = current_user.active_ride
+  end
   def create
     @rider = User.new(rider_params)
     @rider.role = "rider"
