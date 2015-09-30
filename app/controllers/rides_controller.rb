@@ -16,7 +16,11 @@ class RidesController < ApplicationController
 
   def update
     @ride = Ride.find(params[:id])
-    @ride.update(driver_id: current_user.id, accepted_time: Time.now, status: "accepted")
+    if @ride.status == "active"
+      @ride.update(driver_id: current_user.id, accepted_time: Time.now, status: "accepted")
+    elsif @ride.status == "accepted"
+      @ride.update(pickup_time: Time.now, status: "picked up")
+    end
     redirect_to driver_path(current_user)
   end
 
