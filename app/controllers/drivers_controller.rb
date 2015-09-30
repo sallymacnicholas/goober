@@ -1,5 +1,5 @@
 class DriversController < ApplicationController
-  before_action :current_user?
+  before_action :current_user?, only: [:show]
   before_action :authorize_driver, only: [:show]
   def new
     @driver = User.new
