@@ -9,6 +9,9 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
+gem 'google_directions'
+gem 'figaro'
+gem 'simplecov'
 
 group :development, :test do
   gem 'web-console', '~> 2.0'
@@ -18,5 +21,10 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'database_cleaner'
   gem 'pry'
+end
+
+group :test do
+  gem 'vcr'
+  gem 'webmock'
 end
 

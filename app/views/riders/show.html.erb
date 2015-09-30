@@ -2,26 +2,12 @@
 <% if @active_ride == nil %>
   <h2 class="center"><%= link_to 'Request a Ride', new_ride_path %></h2>
 <% else %>
-  <div class="row">
-    <div class="col s10 offset-s1">
-      <ul class="collection with-header"> 
-        <li class="collection-header center"><h4>Current Ride</h4></li>
-        <li class=collection-item>Pickup: <%= @active_ride.pickup %> |
-          Dropoff: <%= @active_ride.dropoff %> |
-          Passengers: <%= @active_ride.passengers %> |
-          <% if @active_ride.status != "active" && @active_ride.status != "completed" %>
-            Driver: <%= @driver.name %>
-          Car Info: <%= @driver.car_model %>, <%= @driver.car_make %>
-          <% end %><span><i class="secondary-content">Status: <%= @active_ride.status %></i></span></li>
-      </ul>
-    </div>
-  </div>
+  <%= render "current_ride", locals: { active_ride: @active_ride } %>
 <% end %>
 <div class="row">
   <div class="col s10 offset-s1">
-      <% if @completed.count != 0 %>
-        <%= render "shared/completed", locals: { completed: @completed } %>
-     <% end %>
+    <% if @completed.count != 0 %>
+      <%= render "shared/completed", locals: { completed: @completed } %>
+    <% end %>
   </div>
 </div>
-<%= @something %>

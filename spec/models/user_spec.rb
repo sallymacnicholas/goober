@@ -18,6 +18,11 @@ RSpec.describe User, type: :model do
   car_model: "Pilot",
   car_capacity: 6}
 
+  let! (:ride) { Ride.create pickup: "1530 spring water littleton co",
+                             dropoff: "1510 blake street denver co",
+                             passengers: 1
+                               }
+
   it "has valid credentials" do
     expect(rider).to be_valid
     expect(driver).to be_valid
@@ -53,5 +58,10 @@ RSpec.describe User, type: :model do
   it "car capacity must be a number" do
     driver.car_capacity = "asdf"
     expect(driver).not_to be_valid
+  end
+
+  it "rider has a ride" do
+    ride.rider_id = rider.id
+    expect(rider.active_ride.pickup).to eq("1530 spring water littleton co")
   end
 end

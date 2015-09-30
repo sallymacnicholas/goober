@@ -6,9 +6,9 @@ class RidesController < ApplicationController
   def create
     @ride = Ride.new(ride_params)
       @ride.rider_id = current_user.id
+      @ride.eta = RideDetails.new(@ride).eta
+      @ride.distance = RideDetails.new(@ride).distance
     if @ride.save
-      redirect_to rider_path(current_user)
-    else
       flash.notice = @ride.errors.full_messages.join(", ")
       render :new
     end
@@ -24,23 +24,6 @@ class RidesController < ApplicationController
       @ride.update(dropoff_time: Time.now, status: "completed")
     end
     redirect_to driver_path(current_user)
-  end
-
-  def set_ride_ids
-      #session[:user_id] = @rider.id
-    if current_user.role == "rider"
-      @ride.rider_id = current_user.id
-    else
-      @ride.driver_id = current_user.id
-    end
-  end
-
-  def redirect_users
-    if current_user.role == "rider"
-      redirect_to rider_path(current_user)
-    else
-      redirect_to driver(current_user)
-    end
   end
 
   private

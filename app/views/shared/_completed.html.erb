@@ -2,13 +2,13 @@
   <li class="collection-header center"><h4>Completed Rides</h4></li>
   <% @completed.each do |ride| %>
     <li class="collection-item"><strong>Pickup</strong>: <%= ride.pickup %> |
-    <strong>Dropoff</strong>: <%= ride.dropoff %> |
-    <strong>Passengers</strong>: <%= ride.passengers %> |
-    <strong>Requested Time: <%= date_converter(ride.created_at) %> |
-    <strong>Accepted Time: <%= date_converter(ride.accepted_time) %> |
-    <strong>Pickup Time: <%= date_converter(ride.pickup_time) %> |
-    <strong>Dropoff Time: <%= date_converter(ride.dropoff_time) %> |
-    <strong>Cost</strong>: <%= number_to_currency((((ride.dropoff_time - ride.pickup_time)/60)/3)*2) %> |
+    <strong>Dropoff:</strong> <%= ride.dropoff %> |
+    <strong>Passengers:</strong> <%= ride.passengers %> |
+    <strong>Requested Time:</strong> <%= date_converter(ride.created_at) %> |
+    <strong>Accepted Time:</strong> <%= date_converter(ride.accepted_time) %> |
+    <strong>Pickup Time:</strong> <%= date_converter(ride.pickup_time) %> |
+    <strong>Dropoff Time:</strong> <%= date_converter(ride.dropoff_time) %> |
+    <strong>Cost:</strong>  <%= number_to_currency((((ride.dropoff_time - ride.pickup_time)/60)/3)*2) %> |
     </li>
   <% end %>
 </ul>

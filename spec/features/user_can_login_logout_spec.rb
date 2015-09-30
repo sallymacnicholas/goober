@@ -41,4 +41,12 @@ RSpec.describe User, type: :feature do
   end
 
 
+  it "redirects with wrong credentials" do
+    visit root_path
+    click_on "Login"
+    fill_in "Email Address", with: "sally@weasdlfkj.com"
+    fill_in "Password", with: "password"
+    click_on "Login To Goober"
+    expect(page).to have_content("Invalid Login")
+  end
 end

@@ -1,0 +1,7 @@
+<li class="collection-header center"><h4>Available Rides</h4></li>
+<% active_rides.each do |ride| %>
+  <li class=collection-item>
+    <%= ride.pickup %> | 
+    <%= ride.dropoff %> | 
+    <%= ride.passengers %><span><i class="secondary-content"><%= link_to 'Accept Ride', ride_path(ride), method: :put %></i></span></li>
+<% end %>

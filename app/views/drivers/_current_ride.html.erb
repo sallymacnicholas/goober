@@ -1,0 +1,11 @@
+<li class="collection-header center"><h4>Current Ride</h4></li>
+<li class=collection-item>
+  Pickup: <%= @driver_ride.pickup %> |
+  Dropoff: <%= @driver_ride.dropoff %> |
+  Passengers: <%= @driver_ride.passengers %>
+<span><i class="secondary-content">Status: <%= @driver_ride.status %>
+  <% if @driver_ride.status == "accepted" %>
+    <%= link_to 'Pick up Rider', ride_path(@driver_ride), method: :put %>
+  <% elsif @driver_ride.status == "picked up" %>
+    <%= link_to 'Complete Ride', ride_path(@driver_ride), method: :put %>
+  <% end %></i></span></li>
