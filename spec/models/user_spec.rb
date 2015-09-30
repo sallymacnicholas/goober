@@ -20,7 +20,8 @@ RSpec.describe User, type: :model do
 
   let! (:ride) { Ride.create pickup: "1530 spring water littleton co",
                              dropoff: "1510 blake street denver co",
-                             passengers: 1
+                             passengers: 1,
+                             rider_id: rider.id
                                }
 
   it "has valid credentials" do
@@ -61,7 +62,6 @@ RSpec.describe User, type: :model do
   end
 
   it "rider has a ride" do
-    ride.rider_id = rider.id
     expect(rider.active_ride.pickup).to eq("1530 spring water littleton co")
   end
 end

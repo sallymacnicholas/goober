@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-09-30T10:57:08-06:00">2015-09-30T10:57:08-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-09-30T12:14:28-06:00">2015-09-30T12:14:28-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">96.21%</span></span>
+    (<span class="covered_percent"><span class="green">94.74%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         5.82
+         6.21
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>10</b> files in total.
-    <b>132</b> relevant lines. 
-    <span class="green"><b>127</b> lines covered</span> and
-    <span class="red"><b>5</b> lines missed </span>
+    <b>133</b> relevant lines. 
+    <span class="green"><b>126</b> lines covered</span> and
+    <span class="red"><b>7</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -57,7 +57,7 @@
         <td>7</td>
         <td>7</td>
         <td>0</td>
-        <td>32.7</td>
+        <td>36.3</td>
       </tr>
       
       <tr>
@@ -87,17 +87,17 @@
         <td>26</td>
         <td>24</td>
         <td>2</td>
-        <td>2.8</td>
+        <td>3.4</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#84a257c1034d79fa0ffd5adb0cf1ad7ea76450d5" class="src_link" title="app/controllers/rides_controller.rb">app/controllers/rides_controller.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>34</td>
-        <td>21</td>
-        <td>21</td>
-        <td>0</td>
-        <td>2.1</td>
+        <td class="green strong">90.91 %</td>
+        <td>36</td>
+        <td>22</td>
+        <td>20</td>
+        <td>2</td>
+        <td>1.9</td>
       </tr>
       
       <tr>
@@ -147,7 +147,7 @@
         <td>20</td>
         <td>20</td>
         <td>0</td>
-        <td>14.2</td>
+        <td>15.2</td>
       </tr>
       
     </tbody>
@@ -228,8 +228,8 @@
           <code class="ruby">  def current_user</code>
         </li>
       
-        <li class="covered" data-hits="215" data-linenumber="9">
-          <span class="hits">215</span>
+        <li class="covered" data-hits="240" data-linenumber="9">
+          <span class="hits">240</span>
           
           <code class="ruby">    @current_user ||= User.find(session[:user_id]) if session[:user_id]</code>
         </li>
@@ -495,7 +495,7 @@
         <li class="covered" data-hits="7" data-linenumber="33">
           <span class="hits">7</span>
           
-          <code class="ruby">    if current_user == nil</code>
+          <code class="ruby">    if current_user == nil || current_user.role == &quot;rider&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="34">
@@ -696,20 +696,20 @@
           <code class="ruby">  def show</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="10">
-          <span class="hits">10</span>
+        <li class="covered" data-hits="13" data-linenumber="10">
+          <span class="hits">13</span>
           
           <code class="ruby">    @active_ride = current_user.active_ride</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="11">
-          <span class="hits">10</span>
+        <li class="covered" data-hits="13" data-linenumber="11">
+          <span class="hits">13</span>
           
           <code class="ruby">    @driver = current_user.driver</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="12">
-          <span class="hits">10</span>
+        <li class="covered" data-hits="13" data-linenumber="12">
+          <span class="hits">13</span>
           
           <code class="ruby">    @completed = current_user.completed_rides</code>
         </li>
@@ -846,8 +846,8 @@
           <code class="ruby">  def current_user?</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="35">
-          <span class="hits">10</span>
+        <li class="covered" data-hits="13" data-linenumber="35">
+          <span class="hits">13</span>
           
           <code class="ruby">    if current_user == nil</code>
         </li>
@@ -882,8 +882,8 @@
           <code class="ruby">  def authorize_rider</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="41">
-          <span class="hits">10</span>
+        <li class="covered" data-hits="13" data-linenumber="41">
+          <span class="hits">13</span>
           
           <code class="ruby">    unless current_user.id == params[:id].to_i</code>
         </li>
@@ -925,11 +925,11 @@
         <div class="source_table" id="84a257c1034d79fa0ffd5adb0cf1ad7ea76450d5">
   <div class="header">
     <h3>app/controllers/rides_controller.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="green">90.91 %</span> covered</h4>
     <div>
-      <b>21</b> relevant lines. 
-      <span class="green"><b>21</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>22</b> relevant lines. 
+      <span class="green"><b>20</b> lines covered</span> and
+      <span class="red"><b>2</b> lines missed.</span>
     </div>
   </div>
   
@@ -1005,109 +1005,109 @@
         <li class="covered" data-hits="3" data-linenumber="12">
           <span class="hits">3</span>
           
-          <code class="ruby">      flash.notice = @ride.errors.full_messages.join(&quot;, &quot;)</code>
+          <code class="ruby">      redirect_to rider_path(current_user)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="13">
-          <span class="hits">3</span>
-          
-          <code class="ruby">      render :new</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="14">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="15">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="16">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="17">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def update</code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="18">
-          <span class="hits">3</span>
-          
-          <code class="ruby">    @ride = Ride.find(params[:id])</code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="19">
-          <span class="hits">3</span>
-          
-          <code class="ruby">    if @ride.status == &quot;active&quot;</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="20">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      @ride.update(driver_id: current_user.id, accepted_time: Time.now, status: &quot;accepted&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="21">
-          
-          
-          <code class="ruby">    elsif @ride.status == &quot;accepted&quot;</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="22">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      @ride.update(pickup_time: Time.now, status: &quot;picked up&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="never" data-hits="" data-linenumber="13">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="24">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="14">
           
-          <code class="ruby">      @ride.update(dropoff_time: Time.now, status: &quot;completed&quot;)</code>
+          
+          <code class="ruby">      flash.notice = @ride.errors.full_messages.join(&quot;, &quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="missed" data-hits="0" data-linenumber="15">
+          
+          
+          <code class="ruby">      render :new</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="26">
-          <span class="hits">3</span>
-          
-          <code class="ruby">    redirect_to driver_path(current_user)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="never" data-hits="" data-linenumber="17">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
+        <li class="never" data-hits="" data-linenumber="18">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="29">
+        <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
-          <code class="ruby">  private</code>
+          <code class="ruby">  def update</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="20">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    @ride = Ride.find(params[:id])</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="21">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    if @ride.status == &quot;active&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      @ride.update(driver_id: current_user.id, accepted_time: Time.now, status: &quot;accepted&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby">    elsif @ride.status == &quot;accepted&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      @ride.update(pickup_time: Time.now, status: &quot;picked up&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
+          <code class="ruby">    else</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="26">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      @ride.update(dropoff_time: Time.now, status: &quot;completed&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="28">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    redirect_to driver_path(current_user)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="30">
@@ -1119,22 +1119,34 @@
         <li class="covered" data-hits="1" data-linenumber="31">
           <span class="hits">1</span>
           
+          <code class="ruby">  private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="32">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="33">
+          <span class="hits">1</span>
+          
           <code class="ruby">  def ride_params</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="32">
+        <li class="covered" data-hits="3" data-linenumber="34">
           <span class="hits">3</span>
           
           <code class="ruby">    params.require(:ride).permit(:pickup, :dropoff, :passengers)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="33">
+        <li class="never" data-hits="" data-linenumber="35">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="34">
+        <li class="never" data-hits="" data-linenumber="36">
           
           
           <code class="ruby">end</code>
@@ -1656,10 +1668,10 @@
           <code class="ruby">  def active_ride</code>
         </li>
       
-        <li class="covered" data-hits="27" data-linenumber="12">
-          <span class="hits">27</span>
+        <li class="covered" data-hits="36" data-linenumber="12">
+          <span class="hits">36</span>
           
-          <code class="ruby">    Ride.where.not(status: &quot;completed&quot;).first</code>
+          <code class="ruby">    Ride.where.not(status: &quot;completed&quot;).where(rider_id: id).first</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
@@ -1680,14 +1692,14 @@
           <code class="ruby">  def driver</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="16">
-          <span class="hits">10</span>
+        <li class="covered" data-hits="13" data-linenumber="16">
+          <span class="hits">13</span>
           
           <code class="ruby">    if active_ride</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="17">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="7" data-linenumber="17">
+          <span class="hits">7</span>
           
           <code class="ruby">      User.where(id: active_ride.driver_id).first</code>
         </li>
@@ -1740,16 +1752,16 @@
           <code class="ruby">  def completed_rides</code>
         </li>
       
-        <li class="covered" data-hits="17" data-linenumber="26">
-          <span class="hits">17</span>
+        <li class="covered" data-hits="20" data-linenumber="26">
+          <span class="hits">20</span>
           
           <code class="ruby">    if role == &quot;rider&quot;</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="27">
-          <span class="hits">10</span>
+        <li class="covered" data-hits="13" data-linenumber="27">
+          <span class="hits">13</span>
           
-          <code class="ruby">      Ride.where(status: &quot;completed&quot;)</code>
+          <code class="ruby">      Ride.where(status: &quot;completed&quot;, rider_id: id)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">
@@ -1761,7 +1773,7 @@
         <li class="covered" data-hits="7" data-linenumber="29">
           <span class="hits">7</span>
           
-          <code class="ruby">      Ride.where(status: &quot;completed&quot;)</code>
+          <code class="ruby">      Ride.where(status: &quot;completed&quot;, driver_id: id)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="30">
