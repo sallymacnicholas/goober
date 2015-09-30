@@ -30,7 +30,7 @@ class DriversController < ApplicationController
   end
 
   def current_user?
-    if current_user == nil
+    if current_user == nil || current_user.role == "rider"
       redirect_to root_path
     end
   end
